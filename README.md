@@ -21,7 +21,6 @@
 ## Contact
 
 - 📧 **Email**: [sarthakguptarjn@gmail.com](mailto:sarthakguptarjn@gmail.com)
-- 📞 **Phone**: +91 8103024624
 - 📍 **Location**: Pune, Maharashtra
 
 ---
