@@ -471,6 +471,22 @@
     }
   }
 
+
+  .about__button {
+  display: inline-block;
+  background-color: #5361ff;
+
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+.about__button:hover {
+  background-color: #79b4f7;
+}
+
   /* Laptops and Desktops (large devices, 769px to 1024px) */
 
   @media screen and (min-width: 1024px) {
