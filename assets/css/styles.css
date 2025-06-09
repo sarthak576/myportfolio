@@ -514,3 +514,55 @@
       right: 24%;
     }
   }
+
+
+  /* Existing styles (assumed minimal; merge with your styles.css if different) */
+.bd-grid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* CV Download Button */
+.about__button {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+.about__button:hover {
+  background-color: #45a049;
+}
+
+/* Contact Form */
+.contact__input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.contact__input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.contact__button {
+  cursor: pointer;
+}
+
+/* Dark Mode Overrides for non-Tailwind elements */
+.dark .contact__input {
+  border-color: #4b5563;
+}
+.dark .about__button {
+  background-color: #3b9941;
+}
+.dark .about__button:hover {
+  background-color: #357a38;
+}

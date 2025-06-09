@@ -61,7 +61,7 @@
             >
           </div>
 
-<img src="assets/img/mypic.png" alt="" class="home__img" loading="lazy" />        </div>
+<img src="assets/img/mypic.png" alt="" class="home__img" />        </div>
       </section>
 
       <!--===== ABOUT =====-->
@@ -158,37 +158,25 @@
       </section>
 
       <!--===== CONTACT =====-->
-      <section class="contact section" id="contact">
+     <section class="contact section" id="contact">
         <h2 class="section-title">Contact</h2>
-
         <div class="contact__container bd-grid">
           <div class="contact__info">
             <h3 class="contact__subtitle">EMAIL</h3>
             <span class="contact__text">sarthakguptarjn@gmail.com</span>
-
             <h3 class="contact__subtitle">PHONE</h3>
             <span class="contact__text">+91 8103024624</span>
-
-            <h3 class="contact__subtitle">ADRESS</h3>
-            <span class="contact__text">Pune,Maharasthra</span>
+            <h3 class="contact__subtitle">ADDRESS</h3>
+            <span class="contact__text">Pune, Maharashtra</span>
           </div>
-
-          <form action="" class="contact__form">
+          <form id="contact-form" action="https://formspree.io/f/myzjeeon" method="POST" enctype="multipart/form-data" class="contact__form">
             <div class="contact__inputs">
-              <input type="text" placeholder="Name" class="contact__input" />
-              <input type="mail" placeholder="Email" class="contact__input" />
+              <input type="text" name="name" placeholder="Name" class="contact__input bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600" required />
+              <input type="email" name="_replyto" placeholder="Your Gmail ID" class="contact__input bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600" required />
             </div>
-
-            <textarea
-              name=""
-              id=""
-              cols="0"
-              rows="10"
-              class="contact__input"
-              placeholder="Message" 
-            ></textarea>
-
-            <input type="submit" value="Submit" class="contact__button" />
+            <textarea name="message" cols="0" rows="10" class="contact__input bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Submit" class="contact__button bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 dark:hover:bg-blue-600" />
+            <p id="form-feedback" class="hidden text-green-600 dark:text-green-400 mt-2">Your Feedback <span style="font-weight: 700;">Helps Me Impove!</span></p>
           </form>
         </div>
       </section>

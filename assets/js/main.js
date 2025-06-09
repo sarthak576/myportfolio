@@ -78,3 +78,69 @@ sr.reveal('.contact__button', {delay: 600})
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Navbar toggle
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('hidden');
+  });
+
+  // Theme Toggle
+  const themeToggle = document.getElementById('theme-toggle');
+  const htmlElement = document.documentElement;
+  const themeIcon = themeToggle.querySelector('i');
+
+  // Load saved theme
+  if (localStorage.getItem('theme') === 'dark') {
+    htmlElement.classList.add('dark');
+    themeIcon.classList.replace('bx-sun', 'bx-moon');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    htmlElement.classList.toggle('dark');
+    if (htmlElement.classList.contains('dark')) {
+      themeIcon.classList.replace('bx-sun', 'bx-moon');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      themeIcon.classList.replace('bx-moon', 'bx-sun');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
+  // Contact Form Submission
+  const contactForm = document.getElementById('contact-form');
+  const formFeedback = document.getElementById('form-feedback');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(contactForm);
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        formFeedback.classList.remove('hidden');
+        formFeedback.textContent = 'Feedback Saved';
+        contactForm.reset(); // Clear form
+        setTimeout(() => {
+          formFeedback.classList.add('hidden');
+        }, 3000); // Hide message after 3 seconds
+      } else {
+        formFeedback.classList.remove('hidden');
+        formFeedback.classList.add('text-red-600', 'dark:text-red-400');
+        formFeedback.textContent = 'Error sending feedback. Please try again.';
+      }
+    } catch (error) {
+      formFeedback.classList.remove('hidden');
+      formFeedback.classList.add('text-red-600', 'dark:text-red-400');
+      formFeedback.textContent = 'Error sending feedback. Please try again.';
+    }
+  });
+});
