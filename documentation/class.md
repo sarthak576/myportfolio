@@ -79,7 +79,4 @@ Simple documentation of how the classes in your HTML code function, organized by
 - **`footer__link`**: Adds consistent appearance and hover effects to footer links.  
 - **`footer__social`**: Styles and aligns social media icons in the footer.  
 
----
-
-Let me know if you need further tweaks or additional documentation! 🚀
 
